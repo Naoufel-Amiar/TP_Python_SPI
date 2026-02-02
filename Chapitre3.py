@@ -43,27 +43,27 @@ mot = "AagAgAdAgAAgaAA"
 
 # ? """ACTIVITÉ 3"""
 
+def Act3():
+    for d in range(100):
+        for u in range(10):
+            nombre = 10*d + u
+            print(nombre)
+    print("\n")
 
-for d in range(100):
-    for u in range(10):
-        nombre = 10*d + u
-        print(nombre)
-print("\n")
 
+    for d in range(100):
+        for u in range(10):
+            nombre = 10*d + u
 
-for d in range(100):
-    for u in range(10):
-        nombre = 10*d + u
+            if nombre == 0:
+                continue
 
-        if nombre == 0:
-            continue
+            unite = nombre % 10
+            dizaine = (nombre // 10) % 10
+            centaine = nombre // 100
 
-        unite = nombre % 10
-        dizaine = (nombre // 10) % 10
-        centaine = nombre // 100
-
-        if unite == 3 and (unite + dizaine + centaine) == 15 and dizaine % 2 == 0:
-            print("une des solutions est:", nombre)
+            if unite == 3 and (unite + dizaine + centaine) == 15 and dizaine % 2 == 0:
+                print("une des solutions est:", nombre)
 
 
 
@@ -76,23 +76,78 @@ Val_A = int(input("Entrez la valeur de A : "))
 Val_B = int(input("Entrez la valeur de B : "))
 Val_C = int(input("Entrez la valeur de C : "))
 
-if Val_A <= Val_B <= Val_C:
-    print("La condition A ≤ B ≤ C est validé")
-else:
-    print("La condition A ≤ B ≤ C n'est pas validé")
-if Val_A + Val_B >= Val_C:
-    print("Il existe bien un triangle avec ces trois valeurs")
-else:
-    print("Il n'existe pas de triangle avec ces trois valeurs")
+def Calcul_Triangle():
+    if Val_A <= Val_B <= Val_C:
+        print("La condition A ≤ B ≤ C est validé")
+    else:
+        print("La condition A ≤ B ≤ C n'est pas validé")
+    if Val_A + Val_B >= Val_C:
+        print("Il existe bien un triangle avec ces trois valeurs")
+    else:
+        print("Il n'existe pas de triangle avec ces trois valeurs")
 
-if Val_A**2 + Val_B**2 == Val_C**2:
-    print("Le triangle est rectangle")
-else:
-    print("Le triangle n'est pas rectangle")
+    if Val_A**2 + Val_B**2 == Val_C**2:
+        print("Le triangle est rectangle")
+    else:
+        print("Le triangle n'est pas rectangle")
+
+    if Val_A == Val_B:
+        print("Le triangle est isocèle")
+    else:
+        print("Le triangle n'est pas isocèle")
+
+
+    CosAngleAlpha = (Val_B**2 + Val_C**2 - Val_A**2) / (2 * Val_B * Val_C)
+    CosAngleBeta = (Val_A**2 + Val_C**2 - Val_B**2) / (2 * Val_A * Val_C)
+    CosAngleGamma = (Val_A**2 + Val_B**2 - Val_C**2) / (2 * Val_A * Val_B)
+
+    if CosAngleAlpha <= 90 :
+        print("L'angle alpha est aigu") 
+    else:
+        print("L'angle alpha est obtus")
+
+    if CosAngleBeta <= 90 :
+        print("L'angle beta est aigu")
+    else:
+        print("L'angle beta est obtus")
+
+    if CosAngleGamma <= 90 :
+        print("L'angle gamma est aigu")
+    else:
+        print("L'angle gamma est obtus")
+
+    print("Le cosinus de l'angle alpha est :", CosAngleAlpha)
+    print("Le cosinus de l'angle beta est :", CosAngleBeta)
+    print("Le cosinus de l'angle gamma est :", CosAngleGamma)
+
+
+
 # ? """ACTIVITÉ 5"""
 
+def FindNumber():
+    RandomNumder = random.randint(0, 99)
+    Try = 0
+
+    ReponseUser = int(input("Devinez le nombre entre 0 et 99 : "))
+    while ReponseUser != RandomNumder:
+        if ReponseUser < RandomNumder:
+            print("C'est plus grand")
+            Try += 1
+        else:
+            print("C'est plus petit")
+            Try += 1
+        ReponseUser = int(input("Devinez le nombre entre 0 et 99 : "))
+        if ReponseUser == RandomNumder:
+            print("Bravo ! Vous avez trouvé le nombre", RandomNumder, "en", Try, "essais.")
+        elif Try >= 7:
+            print("Désolé, vous avez dépassé le nombre maximum d'essais. Le nombre était", RandomNumder)
+            break
 
 
+# guess_calcul()
+# interprete(mot)
+# Act3()
+# Calcul_Triangle()
 
-#guess_calcul()
-#interprete(mot)
+
+FindNumber()
