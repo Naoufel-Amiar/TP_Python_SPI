@@ -230,10 +230,32 @@ def Egalité_ValAbso_RaciCarre(Val):
 def F1(Val_A, Val_B):
     Calcul = (Val_A + Val_B) ** 2
     print("Le résultat de F1 est :", Calcul)
+    return Calcul
 
 def F2(Val_A, Val_B):
     Calcul = Val_A ** 2 + 2*Val_A*Val_B + Val_B**2
     print("Le résultat de F2 est :", Calcul)
+    return Calcul
+
+def F1_1(Val_A, Val_B):
+    Calcul = (Val_A - Val_B) ** 3
+    print("Le résultat de F1_1 est :", Calcul)
+    return Calcul
+
+def F2_1(Val_A, Val_B):
+    Calcul = Val_A ** 3 - 3*Val_A**2*Val_B - 3*Val_A*Val_B**2 + Val_B**3
+    print("Le résultat de F2_1 est :", Calcul)
+    return Calcul
+
+def F1_2(Val_A, Val_B):
+    Calcul = (Val_A - Val_B) ** 3
+    print("Le résultat de F1_2 est :", Calcul)
+    return Calcul
+
+def F2_2(Val_A, Val_B):
+    Calcul = Val_A ** 3 - 3*Val_A**2*Val_B + 3*Val_A*Val_B**2 - Val_B**3
+    print("Le résultat de F2_2 est :", Calcul)
+    return Calcul
 
 def Verif_F1_F2(Val_A, Val_B):
     for i in range (-100, 101):
@@ -243,6 +265,39 @@ def Verif_F1_F2(Val_A, Val_B):
             if F1(Val_A, Val_B) != F2(Val_A, Val_B):
                 print("F1 et F2 ne sont pas égales pour A =", Val_A, "et B =", Val_B)
     print("F1 et F2 sont égales pour tous les entiers de -100 à 100.")
+
+def Verif_F1_1_F2_1():
+    egalite = True
+    for i in range(-100, 101):
+        for j in range(-100, 101):
+            if F1_1(i, j) != F2_1(i, j):
+                print("Pas égales pour A =", i, "B =", j)
+                egalite = False
+    if egalite:
+        print("Elles sont égales pour tous les entiers.")
+
+def Verif_F1_2_F2_2():
+    egalite = True
+    for i in range(-100, 101):
+        for j in range(-100, 101):
+            if F1_2(i, j) != F2_2(i, j):
+                print("Pas égales pour A =", i, "B =", j)
+                egalite = False
+    if egalite:
+        print("Elles sont égales pour tous les entiers.")
+
+
+def SinCos(Val_X):
+    Calcul = math.sin(Val_X) ** 2 + math.cos(Val_X) ** 2
+    print("Le résultat de SinCos est :", Calcul)
+    return Calcul
+
+def Verif_SinCos_Simple(Val_X):
+    if SinCos(Val_X) != 1:
+        print("SinCos n'est pas égal à 1 pour X =", Val_X)
+    else:
+        print("SinCos est égal à 1 pour X =", Val_X)
+
 
 
 
@@ -255,3 +310,8 @@ def Verif_F1_F2(Val_A, Val_B):
 # Racine_De_Carre(-5)
 # Egalité_ValAbso_RaciCarre(-5)
 # Verif_F1_F2(0, 0)
+# Verif_F1_1_F2_1()
+# Verif_F1_2_F2_2() 
+# ! """En Compararant, on remarque que pour tous les entiers de -100 à 100, F1_2 et F2_2 sont égales, ce qui confirme l'identité remarquable (a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3.""")
+
+Verif_SinCos_Simple(36)
