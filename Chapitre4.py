@@ -1,4 +1,6 @@
 import math
+from turtle import *
+from math import *
 
 # ? """ACTIVITÉ 1"""
 
@@ -109,5 +111,92 @@ def Conjecture_Aire_Sup_Peri():
 
 
 
-# ? """ACTIVITÉ 2"""
+# ? """ACTIVITÉ 3"""
 
+def Triangle(taille):
+    color("red")
+    penup()
+    goto(-300, -200)
+    pendown()
+    for _ in range(3):
+        forward(taille)
+        left(120)
+
+def Carre(taille):
+    color("green")
+    penup()
+    goto(0, 0)
+    pendown()
+    for i in range(4):
+        forward(taille)
+        left(90)
+
+def Hexagone(taille):
+    color("blue")
+    penup()
+    goto(150, -200)
+    pendown()
+    for i in range(6):
+        forward(taille)
+        left(60)
+
+def Polygone(taille):
+    Repetition = 8
+    color("cyan")
+    penup()
+    goto(-300, 100)
+    pendown()
+    for i in range(Repetition):
+        forward(taille)
+        left(360 / Repetition)
+
+
+# Triangle(200)
+# Carre(200)
+# Hexagone(100)
+# Polygone(50)
+
+# exitonclick()
+
+
+# ? """ACTIVITÉ 4"""
+
+def Reduction(Age):
+    if Age < 10:
+        print("Reduction de 50%")
+    elif Age >= 10 and Age < 18:
+        print("Reduction de 30%")
+    elif Age >= 18 and Age < 60:
+        print("Reduction de 0")
+    elif Age >= 60:
+        print("Reduction de 20%")
+
+
+def Montant_Total_Famille(Prix):
+    Nb_Personne = int(input("Entrez le nombre de personnes dans la famille : "))
+    Montant_Total = 0   
+    for i in range(Nb_Personne):
+        Age_Personne = int(input(f"Entrez l'âge de la personne {i+1} : "))
+        if Age_Personne < 10:
+            Montant_Total += Prix * 0.5
+        elif Age_Personne >= 10 and Age_Personne < 18:
+            Montant_Total += Prix * 0.7
+        elif Age_Personne >= 18 and Age_Personne < 60:
+            Montant_Total += Prix
+        elif Age_Personne >= 60:
+            Montant_Total += Prix * 0.8
+    print("Le montant total à payer pour la famille est :", Montant_Total, "euros")
+
+def Calcul_Est_Exact(Val_A, Val_B, Reponse):
+    if Val_A * Val_B == Reponse:
+        print("La réponse est exacte !")
+    else:
+        print("La réponse est incorrecte. La bonne réponse est :", Val_A * Val_B)
+
+
+
+
+
+# Reduction(19)
+# Montant_Total_Famille(100)
+Calcul_Est_Exact(5, 7, 35)

@@ -148,6 +148,4 @@ guess_calcul()
 interprete(mot)
 Act3()
 Calcul_Triangle()
-
-
 FindNumber()
