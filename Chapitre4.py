@@ -193,10 +193,65 @@ def Calcul_Est_Exact(Val_A, Val_B, Reponse):
     else:
         print("La réponse est incorrecte. La bonne réponse est :", Val_A * Val_B)
 
+def Test_multiplication( Val_A, Val_B, Language):
+    if Language == "Français":
+        Reponse = int(input(f"Quel est le résultat de la multiplication de {Val_A} par {Val_B} ? "))
+        if Val_A * Val_B == Reponse:
+            print("Bravo ! La réponse est correcte.")
+        else:
+            print("Désolé, la réponse est incorrecte.")
+            print(f"Le résultat de la multiplication de {Val_A} par {Val_B} est : {Val_A * Val_B}")
+    elif Language == "Anglais":
+        Reponse = int(input(f"What is the result of multiplying {Val_A} by {Val_B}? "))
+        if Val_A * Val_B == Reponse:
+            print("Congratulations! The answer is correct.")
+        else:
+            print("Sorry, the answer is incorrect.")
+            print(f"The result of multiplying {Val_A} by {Val_B} is: {Val_A * Val_B}")
 
+
+# ? """ACTIVITÉ 4"""
+
+def Valeur_Absolue(Val):
+    if Val < 0:
+        print("La valeur absolue de", Val, "est", -Val)
+    else:
+        print("La valeur absolue de", Val, "est", Val)
+
+def Racine_De_Carre(Val):
+    print("La racine carrée de", Val, "est", math.sqrt(Val**2))
+
+def Egalité_ValAbso_RaciCarre(Val):
+    if Valeur_Absolue(Val) == Racine_De_Carre(Val):
+        print("La valeur absolue de", Val, "est égale à la racine carrée de", Val, "au carré.")
+    else:
+        print("La valeur absolue de", Val, "n'est pas égale à la racine carrée de", Val, "au carré.")
+
+def F1(Val_A, Val_B):
+    Calcul = (Val_A + Val_B) ** 2
+    print("Le résultat de F1 est :", Calcul)
+
+def F2(Val_A, Val_B):
+    Calcul = Val_A ** 2 + 2*Val_A*Val_B + Val_B**2
+    print("Le résultat de F2 est :", Calcul)
+
+def Verif_F1_F2(Val_A, Val_B):
+    for i in range (-100, 101):
+        Val_A = i
+        for j in range (-100, 101):
+            Val_B = j
+            if F1(Val_A, Val_B) != F2(Val_A, Val_B):
+                print("F1 et F2 ne sont pas égales pour A =", Val_A, "et B =", Val_B)
+    print("F1 et F2 sont égales pour tous les entiers de -100 à 100.")
 
 
 
 # Reduction(19)
 # Montant_Total_Famille(100)
-Calcul_Est_Exact(5, 7, 35)
+# Calcul_Est_Exact(5, 7, 35)
+# Test_multiplication(5, 7, "Français")
+# Test_multiplication(5, 7, "Anglais")
+# Valeur_Absolue(10)
+# Racine_De_Carre(-5)
+# Egalité_ValAbso_RaciCarre(-5)
+# Verif_F1_F2(0, 0)
