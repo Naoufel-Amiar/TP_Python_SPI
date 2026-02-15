@@ -144,10 +144,10 @@ def FindNumber():
             break
 
 
-# guess_calcul()
-# interprete(mot)
-# Act3()
-# Calcul_Triangle()
+guess_calcul()
+interprete(mot)
+Act3()
+Calcul_Triangle()
 
 
 FindNumber()

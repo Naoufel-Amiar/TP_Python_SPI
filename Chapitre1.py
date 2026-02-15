@@ -102,6 +102,9 @@ print("FLOOR :", FLOOR)
 
 #2.
 calcul = math.cos(math.pi/7)**2 + math.sin(math.pi/7)**2
-print("Le calcul trigonométrique donne :", calcul)
+print("Le calcul trigonométrique donne :", calcul) # TODO: Ca marche, on a le 1 en résultat.
+
+
+# ! Cours 5
 
 # ? """ACTIVITÉ 4"""
